@@ -2,133 +2,260 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mercor - Shreya Pandey </title>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mercor — Knowledge Base & Technical Skills</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Light structural styling that works alongside your styles.css */
+    .wrap {max-width: 960px; margin: 0 auto; padding: 24px;}
+    .card { background:#141b2e;border:1px solid #22304a;border-radius:14px;padding:20px;margin:20px 0 }
+    .muted { color:#9fb3c8 }
+    .kbd { background:#1d2842;border:1px solid #22304a;padding:2px 6px;border-radius:6px }
+    code.inline { background:#0f162a;border:1px solid #22304a;border-radius:6px;padding:1px 6px }
+    pre.question {background:#0f162a;border:1px solid #22304a;border-radius:10px;padding:12px;white-space:pre-wrap;word-wrap:break-word;margin:0 0 12px}
+    pre.code {background:#0f162a;border:1px solid #22304a;border-radius:10px;padding:12px;overflow:auto}
+    header h1 {margin: 0 0 6px}
+    h2 {color:#7aa2ff;margin: 0 0 10px}
+    h3 {margin: 10px 0 6px}
+    h4, h5 {margin: 8px 0 6px}
+    ol,ul{margin:8px 0 10px 20px}
+    a { color:#7aa2ff; }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <h1>Mercor</h1>
-      <nav class="top-nav">
-        <a href="#faq">FAQs</a>
-        <a href="#referrals">Referrals</a>
-        <a href="#debugging">Debugging</a>
-        <a href="#sql">SQL</a>
-      </nav>
-    </div>
+  <header class="wrap">
+    <h1>Mercor — Knowledge Base & Technical Skills</h1>
+    <p class="muted">Reference answers and procedures prepared from internal standards, platform behavior, and publicly documented practices.</p>
   </header>
 
-  <main class="container">
-    <aside class="toc" aria-label="Table of contents">
-      <h2>Jump to</h2>
-      <ol>
-        <li><a href="#faq">FAQs</a></li>
-        <li><a href="#referrals">Referrals Dashboard</a></li>
-        <li><a href="#debugging">Application Debugging</a></li>
-        <li><a href="#sql">SQL Examples</a></li>
-      </ol>
-    </aside>
+  <main class="wrap">
 
-    <section id="faq" class="card">
-      <h2>FAQs</h2>
+    <!-- ===================== KNOWLEDGE BASE (QUESTIONS EXACTLY AS GIVEN) ===================== -->
+    <section class="card">
+      <h2>Knowledge Base + Communication</h2>
 
-      <article class="qa" id="q1">
-        <h3>Form I-983 signing</h3>
-        <p><strong>Q:</strong> My university told me I need you to sign my Form I-983. Who should I send this to to get it signed?</p>
-        <p><strong>A:</strong> Mercor isn’t able to sign I-983 forms because we don’t hire contractors under the STEM OPT program. Contact your university’s international student office for the appropriate signer.</p>
+      <!-- Q1 -->
+      <article class="card">
+        <pre class="question">Question 1:
+My university told me I need you to sign my form I-983. Who should I send this to to get it signed?</pre>
+        <h3>Answer 1</h3>
+        <p>
+          Thank you for reaching out. Mercor does not engage contractors under STEM OPT status and does not sign immigration or university forms such as the I-983. For next steps, the right contact is the <strong>employer of record</strong> (the entity that directly employs and supervises you). If the employer of record is unclear, review the <em>Contracts</em> tab in the Mercor dashboard or your onboarding emails. University international student services can also advise on who must sign. For general assistance, contact <code class="inline">support@mercor.com</code>.
+        </p>
       </article>
 
-      <article class="qa" id="q2">
-        <h3>First payout timing</h3>
-        <p><strong>Q:</strong> I’m in my second week and it’s Thursday. You said I’d be paid each Wednesday for the week prior—why don’t I see any money yet?</p>
-        <p><strong>A:</strong> Payouts are initiated on Wednesdays. For the first payment, Stripe applies a 7-day hold while verifying your account, and some banks take an extra 3–5 business days to clear. Once this initial payout is complete, future payments usually land by Thursday.</p>
+      <!-- Q2 -->
+      <article class="card">
+        <pre class="question">Question 2 : 
+ I’m in the middle of my second week working with you all and it’s Thursday now. You said I was supposed to get paid each Wednesday for the week prior. Why don’t I see any money in my account?</pre>
+        <h3>Answer 2</h3>
+        <p>
+          Payouts are initiated each Wednesday for approved hours from the prior week. For a first payout, payment providers may apply a mandatory initial holding period and identity verification window. In Stripe’s case, this can include a first-payout hold (commonly up to 7 days) and an additional 3–5 business days for settlement to your bank, depending on the institution. Subsequent weekly payouts typically settle faster and are often visible by Thursday after the Wednesday initiation.
+        </p>
+        <p>
+          Action items: confirm that payout details in the Mercor profile are complete and correct; if no funds post by end of Friday, contact <code class="inline">support@mercor.com</code> for a trace.
+        </p>
       </article>
 
-      <article class="qa" id="q3">
-        <h3>Resume upload 404</h3>
-        <p><strong>Q:</strong> When I go to <code>https://work.mercor.com/upload-resume</code> I get a 404. How do I upload?</p>
-        <p><strong>A:</strong> Use your dashboard instead: log in at <code>work.mercor.com/home</code> → open <em>Profile</em> → first tab (<em>Resume</em>) to upload or update your file.</p>
+      <!-- Q3 -->
+      <article class="card">
+        <pre class="question">Question 3:
+When I go to https://work.mercor.com/upload-resume I get a 404 error, how do I get past this?</pre>
+        <h3>Answer 3</h3>
+        <p>
+          The legacy URL is no longer active. Resume uploads are available directly in the dashboard:
+        </p>
+        <ol>
+          <li>Sign in at <a href="https://work.mercor.com/home" target="_blank" rel="noopener">work.mercor.com/home</a>.</li>
+          <li>Open <strong>Profile</strong> from the left navigation.</li>
+          <li>In the first tab, <strong>Resume</strong>, use the upload control to add or update your file.</li>
+        </ol>
+        <p>
+          If an error persists (file type/size or browser issue), clear cache or try another browser. If needed, support can provide a direct, current upload link.
+        </p>
       </article>
 
-      <article class="qa" id="q4">
-        <h3>Referral bonus eligibility</h3>
-        <p><strong>Q:</strong> I’ve referred 40 people to Mercor roles but haven’t been paid. When will I get the bonus?</p>
-        <p><strong>A:</strong> The $500 bonus is triggered once a referral is hired and completes at least 10 hours of work. Applications alone do not qualify.</p>
+      <!-- Q4 -->
+      <article class="card">
+        <pre class="question">Question 4 
+I’ve referred 40 people to apply to Mercor roles, but haven’t gotten any money yet. When will I get paid?</pre>
+        <h3>Answer 4</h3>
+        <p>
+          Referral bonuses are paid when a referred candidate is <strong>hired</strong> through Mercor and completes the eligibility criteria (e.g., minimum hours worked). Applications alone are not sufficient. The Referrals dashboard shows status progression (Invited → Applied → In Process → Hired → Completed). Once a referral reaches <em>Completed</em>, a $500 bonus (per current policy) is scheduled in the regular payout cycle.
+        </p>
+      </article>
+
+      <!-- Referrals Docs Page -->
+      <article class="card">
+        <pre class="question">Q1: We recently launched our Referrals dashboard and often get questions about referrals statuses, link functionality, and payout tracking. Prepare a small page we could host on our docs site about how to best navigate the Referrals dashboard.</pre>
+        <h3>Documentation Page Draft — Referrals Dashboard</h3>
+
+        <h4>Overview</h4>
+        <p>
+          The Referrals Dashboard provides visibility into referral activity, hiring progress, and payout timing. It serves as the control center for managing and monetizing your network.
+        </p>
+
+        <h4>Getting Started</h4>
+        <ol>
+          <li>Log in to your Mercor account.</li>
+          <li>Select <strong>Referrals</strong> from the left-hand navigation.</li>
+          <li>At the top, review key metrics:
+            <ul>
+              <li><strong>Total referrals</strong> — number of people referred.</li>
+              <li><strong>Total earning potential</strong> — value if all eligible referrals complete requirements.</li>
+              <li><strong>Total earned</strong> — bonuses already paid.</li>
+              <li><strong>Next payment</strong> — upcoming scheduled payout (if any).</li>
+            </ul>
+          </li>
+        </ol>
+
+        <h4>Inviting Contacts</h4>
+        <p>
+          Use <strong>Invite Connections</strong> to quickly import contacts (e.g., LinkedIn) or upload a list. Share the unique referral link; only applications via this link are eligible.
+        </p>
+
+        <h4>Making a Referral</h4>
+        <ol>
+          <li>Open a relevant job listing.</li>
+          <li>Click <strong>Activate your Referral Link</strong>.</li>
+          <li>Share your unique link broadly (email, social, DMs). Tracking is automatic.</li>
+        </ol>
+
+        <h4>When Do Payouts Happen?</h4>
+        <ul>
+          <li><strong>Bonus:</strong> $500 per successful referral who (1) accepts an offer and (2) completes at least 10 hours of work with Mercor.</li>
+          <li>Referral bonuses follow the weekly contractor payout schedule.</li>
+          <li>Funds are disbursed via Stripe (where supported) or Wise.</li>
+        </ul>
+
+        <h4>Tracking Status</h4>
+        <p>
+          The dashboard updates in real time: offer acceptance, hours completed, and payout scheduling. Each step is visible to remove guesswork.
+        </p>
       </article>
     </section>
 
-    <section id="referrals" class="card">
-      <h2>Referrals Dashboard</h2>
-      <p>The Referrals Dashboard shows referrals, earning potential, and payout status.</p>
-      <h3>Getting started</h3>
-      <ol>
-        <li>Log in to Mercor and open <em>Referrals</em> from the menu.</li>
-        <li>Top metrics: Total Referrals, Earning Potential, Total Earned, Next Payment.</li>
-        <li>Use <em>Invite Connections</em> to import LinkedIn contacts or upload a file.</li>
-      </ol>
-      <h3>Making a referral</h3>
-      <p>Activate your referral link on any job listing, then share your link. Tracking is automatic.</p>
-      <h3>When you get paid</h3>
-      <ul>
-        <li>$500 per referral after they accept an offer and complete 10 hours.</li>
-        <li>Paid weekly via Stripe or Wise.</li>
-      </ul>
-      <h3>Status tracking</h3>
-      <p>See offer acceptance, hours worked, and payout schedule in real time.</p>
-    </section>
+    <!-- ===================== TECHNICAL SKILLS ===================== -->
+    <section class="card">
+      <h2>Technical Skills</h2>
 
-    <section id="debugging" class="card">
-      <h2>Application Debugging</h2>
-      <article class="qa" id="d1">
-        <h3>Find interview status</h3>
-        <p><strong>interviewId:</strong> <code>intr_2f692c18-6462-49ac-ad0f-0222f2f06052</code><br/>
-           <strong>status:</strong> <code>videoRecordingUploaded</code></p>
+      <!-- App Debugging Q1 -->
+      <article class="card">
+        <pre class="question">Application Debugging
+Q1: Using the Chrome Dev Tools, find the `interviewId` and `status` of your Talent Success Interview</pre>
+        <h3>Answer</h3>
+        <ol>
+          <li>Open <strong>Interviews</strong> and press <span class="kbd">F12</span> to open Chrome DevTools.</li>
+          <li>Open the <strong>Network</strong> tab, refresh once, and filter for <code class="inline">interview</code> (or inspect <strong>Fetch/XHR</strong> requests).</li>
+          <li>Open the request that returns the interview list (for example, <code class="inline">/api/interviews</code>).</li>
+          <li>In the <strong>Response</strong> (JSON), read the fields for the Talent Success Interview:
+            <pre class="code"><code>{
+  "id": "intr_2f692c18-6462-49ac-ad0f-0222f2f06052",   // interviewId
+  "type": "Talent Success Interview",
+  "status": "videoRecordingUploaded"                   // status
+}</code></pre>
+          </li>
+        </ol>
       </article>
 
-      <article class="qa" id="d2">
-        <h3>Resume update endpoint</h3>
-        <pre><code>PATCH /api/resume/experiences/{experienceId}</code></pre>
-        <p>PATCH is correct for partial updates without replacing the entire record.</p>
+      <!-- App Debugging Q2 -->
+      <article class="card">
+        <pre class="question">Q2: When you update your work experiences on the Resume page, what internal endpoint is called and with which HTTP Method? Is this the right HTTP method to use, why or why not?</pre>
+        <h3>Answer</h3>
+        <p><strong>Endpoint & Method</strong></p>
+        <pre class="code"><code>PATCH /api/resume/experiences/{experienceId}</code></pre>
+        <p><strong>Why PATCH is correct</strong></p>
+        <ul>
+          <li><strong>PATCH</strong> is intended for partial updates (modify only selected fields like company, role, description, startDate, endDate).</li>
+          <li><strong>PUT</strong> implies a full replacement of the resource, risking unintended field overwrites if not all values are provided.</li>
+          <li><strong>POST</strong> is for creating a new resource, not updating an existing one.</li>
+        </ul>
+        <p>Conclusion: <strong>PATCH</strong> is the REST-compliant choice for editing individual work experiences.</p>
       </article>
 
-      <article class="qa" id="d3">
-        <h3>Job listing created time</h3>
-        <pre><code>"createdAt": "2025-08-06T00:16:53Z"</code></pre>
-        <p>UTC: 06 Aug 2025, 00:16:53 · IST: 06 Aug 2025, 05:46:53 AM</p>
+      <!-- App Debugging Q3 -->
+      <article class="card">
+        <pre class="question">Q3: Using the Chrome Dev Tools, what day and time did I make the job listing that you had applied to? 
+Hint: Due to Next.js caching, the server may return this data in the document itself, or it may make an API call to retrieve this.</pre>
+        <h3>Answer</h3>
+        <ol>
+          <li>Inspect the listing in Network (e.g., <code class="inline">/api/listings/:id</code>) or search the embedded <code class="inline">__NEXT_DATA__</code> script.</li>
+          <li>Read the <code class="inline">createdAt</code> timestamp and convert it to local time if needed.</li>
+        </ol>
+        <p><strong>Observed value</strong></p>
+        <pre class="code"><code>"createdAt": "2025-08-06T00:16:53Z"</code></pre>
+        <p><strong>Converted to IST (UTC+5:30)</strong></p>
+        <pre class="code"><code>Wednesday, 06 August 2025, 05:46:53 AM IST</code></pre>
       </article>
-    </section>
 
-    <section id="sql" class="card">
-      <h2>SQL Examples</h2>
-      <h3 id="s1">Users who applied to Mercor listings</h3>
-      <pre><code class="language-sql">SELECT DISTINCT
+      <!-- SQL -->
+      <article class="card">
+        <pre class="question">SQL Queries
+Sample Schema
+📄 Table: Applications
+ Tracks user applications to job listings.
+ApplicationId (STRING) – Unique ID of the application
+
+UserId (STRING) – ID of the user who applied
+
+ListingVersionId (STRING) – Refers to the versioned listing they applied to
+
+📄 Table: Listings
+ Represents job listings created by companies.
+ListingUID (STRING) – Unique versioned ID of the listing (primary key)
+
+ListingID (STRING) – Unversioned ID of the listing
+
+CompanyId (STRING) – The company that created this listing
+
+RoleId (STRING) – The role the listing is for
+
+RateMin (INT) – Minimum hourly rate offered (in cents)
+
+RateMax (INT) – Maximum hourly rate offered (in cents)
+
+📄 Table: Company
+ Details of companies using the platform.
+CompanyId (STRING) – Unique ID of the company (primary key)
+
+Name (STRING) – Name of the company (e.g., "Mercor")
+
+CreatedAt (TIMESTAMP) – When the company was created
+
+📄 Table: MercorUsers
+ Represents users on the Work platform.
+UserId (STRING) – Unique ID of the user (primary key)
+
+Email (STRING) – Email address of the user
+
+IsLookingForJob (BOOLEAN) – Whether the user is actively looking for a job</pre>
+
+        <h3>Answers</h3>
+
+        <h4>Q1: Users who applied to listings created by “Mercor”</h4>
+        <pre class="code"><code>SELECT DISTINCT
   u.UserId,
   u.Email
 FROM Applications a
 JOIN Listings    l ON l.ListingUID = a.ListingVersionId
 JOIN Company     c ON c.CompanyId  = l.CompanyId
 JOIN MercorUsers u ON u.UserId     = a.UserId
-WHERE c.Name = 'Mercor';
-</code></pre>
+WHERE c.Name = 'Mercor';</code></pre>
 
-      <h3 id="s2">Average min/max listing rates (USD)</h3>
-      <pre><code class="language-sql">SELECT
+        <h4>Q2: Average min/max rate (USD) for listings created by “Mercor”</h4>
+        <pre class="code"><code>SELECT
   AVG(l.RateMin) / 100.0 AS AvgMinRateUSD,
   AVG(l.RateMax) / 100.0 AS AvgMaxRateUSD
 FROM Listings l
 JOIN Company  c ON c.CompanyId = l.CompanyId
-WHERE c.Name = 'Mercor';
-</code></pre>
+WHERE c.Name = 'Mercor';</code></pre>
+        <p class="muted">Note: rates are stored in cents; divide by 100 to convert to USD.</p>
+      </article>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2025 Mercor - Shreya Pandey</p>
-    </div>
+  <footer class="wrap">
+    <p class="muted">© Mercor — support microsite - Shreya Pandey </p>
   </footer>
 </body>
 </html>
