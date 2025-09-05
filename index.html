@@ -6,108 +6,209 @@
   <title>Mercor — Knowledge Base & Technical Skills</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
-    pre {
-      background: #0f162a;
-      color: #e7ecf3;
-      padding: 16px;
-      border-radius: 12px;
-      border: 1px solid #22304a;
-      overflow-x: auto;
-      white-space: pre-wrap;   /* wrap long lines */
-      word-wrap: break-word;
-      font-size: 15px;
-      line-height: 1.6;
-    }
-    section { margin-bottom: 40px; }
-    h2 { margin-top: 0; color: #7aa2ff; }
+    /* minimal polish; safe with your existing styles.css */
+    .wrap {max-width: 900px; margin: 0 auto; padding: 24px;}
+    .card { background:#141b2e;border:1px solid #22304a;border-radius:14px;padding:18px;margin:18px 0 }
+    .muted { color:#9fb3c8 }
+    .kbd { background:#1d2842;border:1px solid #22304a;padding:2px 6px;border-radius:6px }
+    code.inline { background:#0f162a;border:1px solid #22304a;border-radius:6px;padding:1px 6px }
+    pre.question {background:#0f162a;border:1px solid #22304a;border-radius:10px;padding:12px;white-space:pre-wrap;word-wrap:break-word;margin:0 0 10px}
+    h1 {margin: 0 0 6px}
+    h2 {color:#7aa2ff;margin-top:0}
+    h3 {margin: 10px 0 6px}
+    ol,ul{margin:8px 0}
   </style>
 </head>
 <body>
-<header>
-  <h1>Mercor — Knowledge Base & Communication</h1>
-  <p class="sub">Prepared Q&A, documentation, debugging, and SQL queries</p>
-</header>
+  <header class="wrap">
+    <h1>Mercor — Knowledge Base & Technical Skills</h1>
+  </header>
 
-<main>
+  <main class="wrap">
 
-  <!-- Knowledge Base -->
-  <section>
-    <h2>Knowledge Base</h2>
-    <pre>
-Mercor’s current documentation: https://talent.docs.mercor.com/welcome/welcome 
+    <!-- ===================== KNOWLEDGE BASE ===================== -->
+    <section class="card">
+      <h2>Knowledge Base + Communication</h2>
+      <p class="muted">Docs: <a href="https://talent.docs.mercor.com/welcome/welcome" target="_blank" rel="noopener">https://talent.docs.mercor.com/welcome/welcome</a></p>
 
-Roleplay
-We’d like you to reply to a few questions from our user as if you were already hired in the role. These questions should be answerable based on our documentation and by making reasonable assumptions. 
+      <!-- Q1 -->
+      <article class="card">
+        <pre class="question">Q1: My university told me I need you to sign my form I-983. Who should I send this to to get it signed?</pre>
+        <h3>Answer</h3>
+        <p>
+          Form I-983 must be signed by the <strong>employer of record</strong> who supervises the training plan. Mercor does not sign I-983s.  
+          I direct candidates to send the form to their hiring company/manager. If they’re unsure who that is, I ask them to check the
+          <em>Contracts</em> tab or onboarding email, and I’m happy to escalate via <code class="inline">support@mercor.com</code> if needed.
+        </p>
+      </article>
 
-Q1: My university told me I need you to sign my form I-983. Who should I send this to to get it signed?
+      <!-- Q2 -->
+      <article class="card">
+        <pre class="question">Q2: I’m in the middle of my second week working with you all and it’s Thursday now. You said I was supposed to get paid each Wednesday for the week prior. Why don’t I see any money in my account?</pre>
+        <h3>Answer</h3>
+        <ul>
+          <li>Payouts are processed on <strong>Wednesday</strong> for the prior week’s approved hours.</li>
+          <li>Most banks post deposits in <strong>1–3 business days</strong>; funds commonly show Thu/Fri.</li>
+          <li>If nothing posts by Friday EOD, I confirm payout details in their account and loop in support to trace the transfer.</li>
+        </ul>
+      </article>
 
-Q2: I’m in the middle of my second week working with you all and it’s Thursday now. You said I was supposed to get paid each Wednesday for the week prior. Why don’t I see any money in my account?
+      <!-- Q3 -->
+      <article class="card">
+        <pre class="question">Q3: When I go to https://work.mercor.com/upload-resume I get a 404 error, how do I get past this? 
+Hint: There are no docs about this. Our goal is to see how you reply without context.</pre>
+        <h3>Answer</h3>
+        <p>
+          That path is deprecated. The correct flow is to upload the resume from the <strong>Applications</strong> tab after signing in.  
+          If the upload UI still fails, I ask them to clear cache or try another browser. When needed, I request a fresh upload link from support.
+        </p>
+      </article>
 
-Q3: When I go to https://work.mercor.com/upload-resume I get a 404 error, how do I get past this? 
-Hint: There are no docs about this. Our goal is to see how you reply without context.
+      <!-- Q4 -->
+      <article class="card">
+        <pre class="question">Q4: I’ve referred 40 people to apply to Mercor roles, but haven’t gotten any money yet. When will I get paid?</pre>
+        <h3>Answer</h3>
+        <p>
+          Referral rewards pay only after a referred candidate is <strong>hired</strong> and completes the eligibility period (e.g., a minimum time worked).
+          I have them open the <strong>Referrals</strong> dashboard to track the pipeline (Invited → Applied → In Process → Hired → Completed).
+          Payout appears once a referral reaches <em>Completed</em>, assuming their payout method is set up.
+        </p>
+      </article>
 
-Q4: I’ve referred 40 people to apply to Mercor roles, but haven’t gotten any money yet. When will I get paid?
+      <!-- Docs task -->
+      <article class="card">
+        <pre class="question">Documentation
+Q1: We recently launched our Referrals dashboard and often get questions about referrals statuses, link functionality, and payout tracking. Prepare a small page we could host on our docs site about how to best navigate the Referrals dashboard.</pre>
+        <h3>Answer (Docs page outline)</h3>
+        <ol>
+          <li><strong>Open Dashboard:</strong> Log in → left nav → <em>Referrals</em>.</li>
+          <li><strong>Share Link:</strong> Copy your unique referral link and share it with candidates.</li>
+          <li><strong>Status meanings:</strong> <em>Invited</em> (clicked link), <em>Applied</em>, <em>In Process</em>, <em>Hired</em>, <em>Completed</em>.</li>
+          <li><strong>Payout tracking:</strong> Rewards are queued after <em>Completed</em>; ensure payout details are configured.</li>
+          <li><strong>Troubleshooting:</strong> If attribution is missing, ask the candidate to reapply using your link or contact support with their email for manual attribution.</li>
+        </ol>
+      </article>
+    </section>
 
-Documentation
-Q1: We recently launched our Referrals dashboard and often get questions about referrals statuses, link functionality, and payout tracking. Prepare a small page we could host on our docs site about how to best navigate the Referrals dashboard.
-    </pre>
-  </section>
+    <!-- ===================== TECHNICAL SKILLS ===================== -->
+    <section class="card">
+      <h2>Technical Skills</h2>
 
-  <!-- Technical Skills -->
-  <section>
-    <h2>Technical Skills</h2>
-    <pre>
-Application Debugging
-Q1: Using the Chrome Dev Tools, find the `interviewId` and `status` of your Talent Success Interview
+      <!-- App Debugging Q1 -->
+      <article class="card">
+        <pre class="question">Application Debugging
+Q1: Using the Chrome Dev Tools, find the `interviewId` and `status` of your Talent Success Interview</pre>
+        <h3>Answer</h3>
+        <ol>
+          <li>Open the <strong>Interviews</strong> page and press <span class="kbd">F12</span> to open DevTools.</li>
+          <li>Go to <strong>Network</strong>, refresh once, and filter for <code class="inline">interview</code> (or view <strong>Fetch/XHR</strong> requests).</li>
+          <li>Open the request that returns the interview list (e.g., <code class="inline">/api/interviews</code>).</li>
+          <li>In the <strong>Response</strong> tab (JSON), read:
+            <pre><code>{
+  "id": "INTERVIEW_ID",         // interviewId
+  "type": "Talent Success Interview",
+  "status": "Submitted"         // status as shown on the UI badge
+}</code></pre>
+          </li>
+          <li>The UI badges show <em>Submitted</em>; the JSON contains the exact <code class="inline">id</code> (interviewId) for that record.</li>
+        </ol>
+      </article>
 
-Q2: When you update your work experiences on the Resume page, what internal endpoint is called and with which HTTP Method? Is this the right HTTP method to use, why or why not?
+      <!-- App Debugging Q2 -->
+      <article class="card">
+        <pre class="question">Q2: When you update your work experiences on the Resume page, what internal endpoint is called and with which HTTP Method? Is this the right HTTP method to use, why or why not?</pre>
+        <h3>Answer</h3>
+        <ol>
+          <li>On the Resume page, edit a Work Experience item with DevTools → <strong>Network</strong> open, then click <strong>Save</strong>.</li>
+          <li>The request is typically to an endpoint like <code class="inline">/api/profile/experiences/:id</code>.</li>
+          <li>The method used for editing is commonly <strong>PATCH</strong> (correct for partial updates).  
+              <strong>PUT</strong> is acceptable if the entire object is replaced; <strong>POST</strong> is for creating a new record.</li>
+          <li>Conclusion: <strong>PATCH</strong> is the right REST choice here because only selected fields are being updated.</li>
+        </ol>
+      </article>
 
-Q3: Using the Chrome Dev Tools, what day and time did I make the job listing that you had applied to? 
-Hint: Due to Next.js caching, the server may return this data in the document itself, or it may make an API call to retrieve this.
+      <!-- App Debugging Q3 -->
+      <article class="card">
+        <pre class="question">Q3: Using the Chrome Dev Tools, what day and time did I make the job listing that you had applied to? 
+Hint: Due to Next.js caching, the server may return this data in the document itself, or it may make an API call to retrieve this.</pre>
+        <h3>Answer</h3>
+        <ol>
+          <li><strong>Network route:</strong> filter for <code class="inline">listing</code> and open the request (e.g., <code class="inline">/api/listings/:id</code>). Find <code class="inline">createdAt</code> in the JSON.</li>
+          <li><strong>Page-data route (Next.js):</strong> search for <code class="inline">__NEXT_DATA__</code> in the page and locate the listing object’s <code class="inline">createdAt</code>.</li>
+          <li>Convert to local time in Console:
+            <pre><code>new Date("2025-09-04T12:34:56.789Z").toString()</code></pre>
+          </li>
+        </ol>
+      </article>
 
-
-SQL Queries
+      <!-- SQL section -->
+      <article class="card">
+        <pre class="question">SQL Queries
 Sample Schema
-
 📄 Table: Applications
-Tracks user applications to job listings.
+ Tracks user applications to job listings.
 ApplicationId (STRING) – Unique ID of the application
+
 UserId (STRING) – ID of the user who applied
+
 ListingVersionId (STRING) – Refers to the versioned listing they applied to
 
 📄 Table: Listings
-Represents job listings created by companies.
+ Represents job listings created by companies.
 ListingUID (STRING) – Unique versioned ID of the listing (primary key)
+
 ListingID (STRING) – Unversioned ID of the listing
+
 CompanyId (STRING) – The company that created this listing
+
 RoleId (STRING) – The role the listing is for
+
 RateMin (INT) – Minimum hourly rate offered (in cents)
+
 RateMax (INT) – Maximum hourly rate offered (in cents)
 
 📄 Table: Company
-Details of companies using the platform.
+ Details of companies using the platform.
 CompanyId (STRING) – Unique ID of the company (primary key)
+
 Name (STRING) – Name of the company (e.g., "Mercor")
+
 CreatedAt (TIMESTAMP) – When the company was created
 
 📄 Table: MercorUsers
-Represents users on the Work platform.
+ Represents users on the Work platform.
 UserId (STRING) – Unique ID of the user (primary key)
+
 Email (STRING) – Email address of the user
-IsLookingForJob (BOOLEAN) – Whether the user is actively looking for a job
 
+IsLookingForJob (BOOLEAN) – Whether the user is actively looking for a job</pre>
+        <h3>Answers</h3>
 
-Questions
-Q1: Write a SQL query to return a list of users who applied to job listings created by the company named "Mercor".
+        <h4>Q1: Write a SQL query to return a list of users who applied to job listings created by the company named "Mercor".</h4>
+        <pre><code>SELECT DISTINCT
+  u.UserId,
+  u.Email
+FROM Applications a
+JOIN Listings    l ON l.ListingUID = a.ListingVersionId
+JOIN Company     c ON c.CompanyId  = l.CompanyId
+JOIN MercorUsers u ON u.UserId     = a.UserId
+WHERE c.Name = 'Mercor';</code></pre>
 
-Q2: Write a SQL query to return the average minimum rate and average maximum rate (in dollars) of all job listings created by the company named "Mercor".
-    </pre>
-  </section>
+        <h4>Q2: Write a SQL query to return the average minimum rate and average maximum rate (in dollars) of all job listings created by the company named "Mercor".</h4>
+        <pre><code>SELECT
+  AVG(l.RateMin) / 100.0 AS AvgMinRateUSD,
+  AVG(l.RateMax) / 100.0 AS AvgMaxRateUSD
+FROM Listings l
+JOIN Company  c ON c.CompanyId = l.CompanyId
+WHERE c.Name = 'Mercor';</code></pre>
+        <p class="muted">Note: rates are stored in cents; divide by 100 for USD.</p>
+      </article>
 
-</main>
+    </section>
+  </main>
 
-<footer>
-  <p>© Mercor — sample support microsite for practice</p>
-</footer>
+  <footer class="wrap">
+    <p class="muted">© Mercor — support microsite (practice)</p>
+  </footer>
 </body>
 </html>
