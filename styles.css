@@ -1,36 +1,151 @@
-name: Deploy to GitHub Pages
+/* =========================================================
+   Mercor Support Microsite — Global Styles
+   (safe, professional, accessible)
+   ========================================================= */
 
-on:
-  push:
-    branches: [ main ]
-  workflow_dispatch:
+/* ---- Color system ---- */
+:root{
+  --bg-0:#0b1020;      /* app background gradient start */
+  --bg-1:#0d1326;      /* app background gradient end   */
+  --card:#141b2e;      /* card background               */
+  --border:#22304a;    /* card & input borders          */
+  --ink:#e7ecf3;       /* primary text                  */
+  --muted:#9fb3c8;     /* secondary text                */
+  --accent:#7aa2ff;    /* links / accents               */
+  --surface:#0f162a;   /* code/pre background           */
+  --surface-2:#1d2842; /* kbd background                */
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+/* ---- Reset-ish ---- */
+*{ box-sizing:border-box; }
+html, body { height:100%; }
+body{
+  margin:0;
+  font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Inter,Arial,sans-serif;
+  color:var(--ink);
+  background:linear-gradient(180deg,var(--bg-0),var(--bg-1));
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
+/* ---- Layout primitives ---- */
+header, main, footer{ max-width:960px; margin:0 auto; padding:24px; }
+header{ padding-top:40px; }
+footer{ color:var(--muted); text-align:center; padding-bottom:48px; }
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: .
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+h1,h2,h3,h4,h5{ line-height:1.25; margin:0 0 .6em; }
+h1{ font-size:32px; letter-spacing:.2px; }
+h2{ font-size:22px; color:var(--accent); }
+h3{ font-size:18px; }
+h4{ font-size:16px; color:var(--muted); margin-top:.25rem; }
+
+p{ margin:.5em 0 1em; }
+ul,ol{ margin:.2em 0 1em 1.25em; padding:0; }
+li + li{ margin-top:.35em; }
+
+a{ color:var(--accent); text-decoration:none; }
+a:hover, a:focus{ text-decoration:underline; }
+
+/* ---- Cards ---- */
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:20px;
+  margin:20px 0;
+  box-shadow:var(--shadow);
+}
+
+/* nested cards look like sections */
+.card .card{
+  margin:16px 0;
+  border-radius:14px;
+  box-shadow:0 6px 20px rgba(0,0,0,.28);
+}
+
+/* ---- Muted / utility ---- */
+.muted{ color:var(--muted); }
+.kbd{
+  background:var(--surface-2);
+  border:1px solid var(--border);
+  padding:2px 6px;
+  border-radius:6px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:.9em;
+}
+
+/* inline code chip */
+code.inline{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:6px;
+  padding:1px 6px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+
+/* ---- Code & Questions blocks ---- */
+pre{
+  margin:0 0 1em;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:14px;
+  overflow:auto;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:14.5px;
+  line-height:1.6;
+  tab-size:2;
+  -moz-tab-size:2;
+}
+
+pre.question{
+  white-space:pre-wrap;   /* keep employer text exactly */
+  word-wrap:break-word;
+}
+
+/* code blocks inside <pre> already look good, but ensure spacing */
+pre.code code{ display:block; white-space:pre-wrap; word-wrap:break-word; }
+
+/* ---- Tables (if you add any later) ---- */
+table{ width:100%; border-collapse:separate; border-spacing:0; margin:10px 0 16px; }
+th,td{ text-align:left; padding:10px 12px; }
+thead th{
+  background:var(--surface);
+  border-bottom:1px solid var(--border);
+}
+tbody td{ border-top:1px solid var(--border); }
+
+/* ---- Forms (future-proof) ---- */
+input,select,textarea,button{
+  font:inherit;
+  color:inherit;
+}
+input,select,textarea{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:10px 12px;
+  outline:none;
+}
+input:focus,select:focus,textarea:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px rgba(122,162,255,.18);
+}
+
+/* ---- Responsive tweaks ---- */
+@media (max-width:720px){
+  header, main, footer{ padding:20px; }
+  h1{ font-size:26px; }
+  h2{ font-size:20px; }
+  .card{ padding:16px; border-radius:14px; }
+  pre{ font-size:14px; }
+}
+
+/* ---- Print friendly ---- */
+@media print{
+  body{ background:#fff; color:#000; }
+  header, main, footer{ max-width:100%; box-shadow:none; }
+  .card{ box-shadow:none; border-color:#ddd; }
+  a{ color:#000; text-decoration:underline; }
+}
