@@ -3,130 +3,105 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mercor — Knowledge Base & Answers</title>
+  <title>Mercor — Knowledge Base & Technical Skills</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    pre {
+      background: #0f162a;
+      color: #e7ecf3;
+      padding: 16px;
+      border-radius: 12px;
+      border: 1px solid #22304a;
+      overflow-x: auto;
+      white-space: pre-wrap;   /* wrap long lines */
+      word-wrap: break-word;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    section { margin-bottom: 40px; }
+    h2 { margin-top: 0; color: #7aa2ff; }
+  </style>
 </head>
 <body>
 <header>
-  <h1>Knowledge Base + Communication</h1>
-  <p class="sub">
-    Mercor’s current documentation: 
-    <a href="https://talent.docs.mercor.com/welcome/welcome" target="_blank" rel="noopener">talent.docs.mercor.com</a>
-  </p>
+  <h1>Mercor — Knowledge Base & Communication</h1>
+  <p class="sub">Prepared Q&A, documentation, debugging, and SQL queries</p>
 </header>
 
 <main>
 
-  <!-- Roleplay Q&A -->
+  <!-- Knowledge Base -->
   <section>
-    <h2>Roleplay — User Questions & Answers</h2>
+    <h2>Knowledge Base</h2>
+    <pre>
+Mercor’s current documentation: https://talent.docs.mercor.com/welcome/welcome 
 
-    <article>
-      <h3>Q1. My university told me I need you to sign my form I-983. Who should I send this to?</h3>
-      <p><strong>Answer:</strong> Mercor does not sign I-983 forms. The I-983 must be signed by your
-        <strong>employer of record</strong> (the company that directly employs/supervises you). If you’re unsure who that is,
-        check your <em>Contracts</em> tab or onboarding email. Need help? Email <code>support@mercor.com</code>.
-      </p>
-    </article>
+Roleplay
+We’d like you to reply to a few questions from our user as if you were already hired in the role. These questions should be answerable based on our documentation and by making reasonable assumptions. 
 
-    <article>
-      <h3>Q2. It’s Thursday in my second week. You said I’d be paid Wednesday for last week. Why is there no money?</h3>
-      <ul>
-        <li>Payouts process on <strong>Wednesdays</strong> for approved hours from the prior week.</li>
-        <li>Banks can take <strong>1–3 business days</strong> to settle. It’s normal not to see funds until Thu/Fri.</li>
-        <li>If there’s still nothing by Friday EOD, confirm your payout details are complete and contact support.</li>
-      </ul>
-    </article>
+Q1: My university told me I need you to sign my form I-983. Who should I send this to to get it signed?
 
-    <article>
-      <h3>Q3. I get a 404 at <code>https://work.mercor.com/upload-resume</code>. How do I get past this?</h3>
-      <p><strong>Answer:</strong> That path is outdated. Upload your resume from the <strong>Applications</strong> tab after
-        you sign in. If it still fails, clear cache or try another browser; if blocked, contact support for a fresh link.
-      </p>
-    </article>
+Q2: I’m in the middle of my second week working with you all and it’s Thursday now. You said I was supposed to get paid each Wednesday for the week prior. Why don’t I see any money in my account?
 
-    <article>
-      <h3>Q4. I’ve referred 40 people but haven’t been paid. When will I get paid?</h3>
-      <ul>
-        <li>Referral rewards pay only when a referred candidate is <strong>hired</strong> and meets eligibility
-            (e.g., minimum time worked).</li>
-        <li>Track each referral’s status and payout state in your <strong>Referrals</strong> dashboard.</li>
-      </ul>
-    </article>
+Q3: When I go to https://work.mercor.com/upload-resume I get a 404 error, how do I get past this? 
+Hint: There are no docs about this. Our goal is to see how you reply without context.
+
+Q4: I’ve referred 40 people to apply to Mercor roles, but haven’t gotten any money yet. When will I get paid?
+
+Documentation
+Q1: We recently launched our Referrals dashboard and often get questions about referrals statuses, link functionality, and payout tracking. Prepare a small page we could host on our docs site about how to best navigate the Referrals dashboard.
+    </pre>
   </section>
 
-  <!-- Docs page: Referrals dashboard guide -->
+  <!-- Technical Skills -->
   <section>
-    <h2>Documentation — Referrals Dashboard: How to Use</h2>
-    <ol>
-      <li><strong>Open Dashboard:</strong> Sign in → left nav → <em>Referrals</em>.</li>
-      <li><strong>Share Your Link:</strong> Copy your unique referral link and share it with candidates.</li>
-      <li><strong>Status Meanings:</strong>
-        <ul>
-          <li><em>Invited</em> — person clicked your link</li>
-          <li><em>Applied</em> — submitted an application</li>
-          <li><em>In Process</em> — under review/interviews</li>
-          <li><em>Hired</em> — offer accepted</li>
-          <li><em>Completed</em> — eligibility met; payout queued</li>
-        </ul>
-      </li>
-      <li><strong>Payout Tracking:</strong> Once a referral reaches <em>Completed</em>, the reward appears in the payout queue.
-          Ensure your payout method is set up in your profile.</li>
-      <li><strong>Troubleshooting:</strong> If a referral didn’t attach to you, ask the candidate to reapply using your link,
-          or contact support with their email so we can attribute it.</li>
-    </ol>
-  </section>
+    <h2>Technical Skills</h2>
+    <pre>
+Application Debugging
+Q1: Using the Chrome Dev Tools, find the `interviewId` and `status` of your Talent Success Interview
 
-  <!-- Technical (optional extra blocks you can keep) -->
-  <section>
-    <h2>Application Debugging (Chrome DevTools)</h2>
-    <details open>
-      <summary><strong>Find</strong> <code>interviewId</code> &amp; <code>status</code> for “Talent Success Interview”</summary>
-      <ol>
-        <li>Open Interviews → <kbd>F12</kbd> → <strong>Network</strong> → filter <code>interview</code>.</li>
-        <li>Click the card to trigger a request → open it → <strong>Response</strong> → read <code>id</code>/<code>status</code>.</li>
-      </ol>
-    </details>
-    <details>
-      <summary><strong>Resume → Work Experience</strong>: endpoint &amp; method</summary>
-      <ol>
-        <li>Edit an item & Save with Network open.</li>
-        <li>Expected: <strong>PATCH</strong> (partial update). <strong>PUT</strong> is OK if replacing whole object.
-            <strong>POST</strong> should be for create/upsert.</li>
-      </ol>
-    </details>
-    <details>
-      <summary><strong>Find listing created time</strong></summary>
-      <ol>
-        <li>Filter Network for <code>listing</code> and read <code>createdAt</code> in response, or search
-            <code>__NEXT_DATA__</code> for it.</li>
-        <li>Convert in Console: <code>new Date("2025-09-04T12:34:56.789Z").toString()</code></li>
-      </ol>
-    </details>
-  </section>
+Q2: When you update your work experiences on the Resume page, what internal endpoint is called and with which HTTP Method? Is this the right HTTP method to use, why or why not?
 
-  <section>
-    <h2>SQL Queries</h2>
-    <h3>Users who applied to listings created by “Mercor”</h3>
-<pre><code>SELECT DISTINCT
-  u.UserId,
-  u.Email
-FROM Applications a
-JOIN Listings    l ON l.ListingUID = a.ListingVersionId
-JOIN Company     c ON c.CompanyId  = l.CompanyId
-JOIN MercorUsers u ON u.UserId     = a.UserId
-WHERE c.Name = 'Mercor';
-</code></pre>
+Q3: Using the Chrome Dev Tools, what day and time did I make the job listing that you had applied to? 
+Hint: Due to Next.js caching, the server may return this data in the document itself, or it may make an API call to retrieve this.
 
-    <h3>Average min/max rate (USD) for “Mercor” listings</h3>
-<pre><code>SELECT
-  AVG(l.RateMin) / 100.0 AS AvgMinRateUSD,
-  AVG(l.RateMax) / 100.0 AS AvgMaxRateUSD
-FROM Listings l
-JOIN Company  c ON c.CompanyId = l.CompanyId
-WHERE c.Name = 'Mercor';
-</code></pre>
-    <p class="note">Rates are stored in cents → divide by 100.</p>
+
+SQL Queries
+Sample Schema
+
+📄 Table: Applications
+Tracks user applications to job listings.
+ApplicationId (STRING) – Unique ID of the application
+UserId (STRING) – ID of the user who applied
+ListingVersionId (STRING) – Refers to the versioned listing they applied to
+
+📄 Table: Listings
+Represents job listings created by companies.
+ListingUID (STRING) – Unique versioned ID of the listing (primary key)
+ListingID (STRING) – Unversioned ID of the listing
+CompanyId (STRING) – The company that created this listing
+RoleId (STRING) – The role the listing is for
+RateMin (INT) – Minimum hourly rate offered (in cents)
+RateMax (INT) – Maximum hourly rate offered (in cents)
+
+📄 Table: Company
+Details of companies using the platform.
+CompanyId (STRING) – Unique ID of the company (primary key)
+Name (STRING) – Name of the company (e.g., "Mercor")
+CreatedAt (TIMESTAMP) – When the company was created
+
+📄 Table: MercorUsers
+Represents users on the Work platform.
+UserId (STRING) – Unique ID of the user (primary key)
+Email (STRING) – Email address of the user
+IsLookingForJob (BOOLEAN) – Whether the user is actively looking for a job
+
+
+Questions
+Q1: Write a SQL query to return a list of users who applied to job listings created by the company named "Mercor".
+
+Q2: Write a SQL query to return the average minimum rate and average maximum rate (in dollars) of all job listings created by the company named "Mercor".
+    </pre>
   </section>
 
 </main>
