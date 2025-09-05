@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mercor – FAQ & Docs</title>
-  <meta name="description" content="Human-written FAQs and docs for contractors and applicants." />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mercor - Shreya Pandey </title>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
@@ -12,110 +11,98 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <div class="brand">
-        <img src="assets/logo.svg" alt="Mercor" class="logo" />
-        <h1>Mercor – FAQ & Docs</h1>
-      </div>
-      <div class="search-wrap">
-        <input id="search" type="search" placeholder="Search FAQs (e.g., payout, resume, referrals)..." aria-label="Search FAQs" />
-      </div>
+      <h1>Mercor</h1>
+      <nav class="top-nav">
+        <a href="#faq">FAQs</a>
+        <a href="#referrals">Referrals</a>
+        <a href="#debugging">Debugging</a>
+        <a href="#sql">SQL</a>
+      </nav>
     </div>
   </header>
 
   <main class="container">
-    <nav class="toc" aria-label="Table of contents">
+    <aside class="toc" aria-label="Table of contents">
       <h2>Jump to</h2>
-      <ul>
+      <ol>
         <li><a href="#faq">FAQs</a></li>
         <li><a href="#referrals">Referrals Dashboard</a></li>
         <li><a href="#debugging">Application Debugging</a></li>
         <li><a href="#sql">SQL Examples</a></li>
-      </ul>
-    </nav>
+      </ol>
+    </aside>
 
     <section id="faq" class="card">
       <h2>FAQs</h2>
 
-      <article class="qa" data-tags="i-983 stem opt university form sign">
-        <h3 id="q1">Form I-983 signing</h3>
-        <p class="q"><strong>Q:</strong> My university told me I need you to sign my Form I-983. Who should I send this to to get it signed?</p>
-        <p class="a"><strong>A:</strong> Thanks for checking. Mercor isn’t able to sign I-983 forms because we don’t hire contractors under the STEM OPT program. Your best next step is to contact your university’s international student office—they’ll point you to the right authorized signer.</p>
-        <button class="copy" data-copy="#q1">Copy link</button>
+      <article class="qa" id="q1">
+        <h3>Form I-983 signing</h3>
+        <p><strong>Q:</strong> My university told me I need you to sign my Form I-983. Who should I send this to to get it signed?</p>
+        <p><strong>A:</strong> Mercor isn’t able to sign I-983 forms because we don’t hire contractors under the STEM OPT program. Contact your university’s international student office for the appropriate signer.</p>
       </article>
 
-      <article class="qa" data-tags="payments payout stripe first week thursday wednesday delay verification">
-        <h3 id="q2">First payout timing</h3>
-        <p class="q"><strong>Q:</strong> I’m in my second week and it’s Thursday. You said I’d be paid each Wednesday for the week prior—why don’t I see any money yet?</p>
-        <p class="a"><strong>A:</strong> Totally get that the first payment feels time-sensitive. We initiate payouts on Wednesdays. For the very first payout, Stripe applies a one-time 7-day hold while verifying your account, and some banks take an extra 3–5 business days to show the funds. The upside: once this first one clears, future payouts generally land by Thursday after we initiate on Wednesday.</p>
-        <ul class="note">
-          <li>Payments are already moving through Stripe once you see the “initiated” status.</li>
-          <li>If something seems off after the expected window, reach out and we’ll check it.</li>
-        </ul>
-        <button class="copy" data-copy="#q2">Copy link</button>
+      <article class="qa" id="q2">
+        <h3>First payout timing</h3>
+        <p><strong>Q:</strong> I’m in my second week and it’s Thursday. You said I’d be paid each Wednesday for the week prior—why don’t I see any money yet?</p>
+        <p><strong>A:</strong> Payouts are initiated on Wednesdays. For the first payment, Stripe applies a 7-day hold while verifying your account, and some banks take an extra 3–5 business days to clear. Once this initial payout is complete, future payments usually land by Thursday.</p>
       </article>
 
-      <article class="qa" data-tags="resume upload 404 link profile dashboard">
-        <h3 id="q3">Resume upload 404</h3>
-        <p class="q"><strong>Q:</strong> When I go to <code>https://work.mercor.com/upload-resume</code> I get a 404. How do I upload?</p>
-        <p class="a"><strong>A:</strong> That old link isn’t active. Instead: log in at <code>work.mercor.com/home</code> → open <em>Profile</em> from the left menu → use the first tab (<em>Resume</em>) to upload or update your file. The moment it’s uploaded, it’s visible to clients. If you see file-type or size errors, ping us and we’ll help.</p>
-        <button class="copy" data-copy="#q3">Copy link</button>
+      <article class="qa" id="q3">
+        <h3>Resume upload 404</h3>
+        <p><strong>Q:</strong> When I go to <code>https://work.mercor.com/upload-resume</code> I get a 404. How do I upload?</p>
+        <p><strong>A:</strong> Use your dashboard instead: log in at <code>work.mercor.com/home</code> → open <em>Profile</em> → first tab (<em>Resume</em>) to upload or update your file.</p>
       </article>
 
-      <article class="qa" data-tags="referrals bonus payout 500 eligibility hours">
-        <h3 id="q4">Referral bonus eligibility</h3>
-        <p class="q"><strong>Q:</strong> I’ve referred 40 people to Mercor roles but haven’t been paid. When will I get the bonus?</p>
-        <p class="a"><strong>A:</strong> We love strong referral activity. The $500 bonus triggers once a referral is hired and completes at least 10 hours of work. Applications alone don’t qualify. When one of your referrals is placed and hits 10 hours, the bonus is automatically added to your account.</p>
-        <button class="copy" data-copy="#q4">Copy link</button>
+      <article class="qa" id="q4">
+        <h3>Referral bonus eligibility</h3>
+        <p><strong>Q:</strong> I’ve referred 40 people to Mercor roles but haven’t been paid. When will I get the bonus?</p>
+        <p><strong>A:</strong> The $500 bonus is triggered once a referral is hired and completes at least 10 hours of work. Applications alone do not qualify.</p>
       </article>
     </section>
 
     <section id="referrals" class="card">
       <h2>Referrals Dashboard</h2>
-      <p>The Referrals Dashboard gives you a live view of who you’ve invited, where they are in the process, and when you get paid.</p>
+      <p>The Referrals Dashboard shows referrals, earning potential, and payout status.</p>
       <h3>Getting started</h3>
       <ol>
-        <li>Log in to your Mercor account and open <em>Referrals</em> from the left menu.</li>
-        <li>At the top you’ll see: <em>Total Referrals</em>, <em>Total Earning Potential</em>, <em>Total Earned</em>, and <em>Next Payment</em>.</li>
-        <li>Use <em>Invite Connections</em> to import LinkedIn contacts or upload a file for bulk outreach.</li>
+        <li>Log in to Mercor and open <em>Referrals</em> from the menu.</li>
+        <li>Top metrics: Total Referrals, Earning Potential, Total Earned, Next Payment.</li>
+        <li>Use <em>Invite Connections</em> to import LinkedIn contacts or upload a file.</li>
       </ol>
       <h3>Making a referral</h3>
-      <p>Activate your referral link on any job listing, then share your unique link. Tracking is automatic.</p>
+      <p>Activate your referral link on any job listing, then share your link. Tracking is automatic.</p>
       <h3>When you get paid</h3>
       <ul>
         <li>$500 per referral after they accept an offer and complete 10 hours.</li>
-        <li>Paid weekly via Stripe or Wise, aligned with contractor payouts.</li>
+        <li>Paid weekly via Stripe or Wise.</li>
       </ul>
       <h3>Status tracking</h3>
-      <p>Real-time visibility into offer acceptance, hours worked, and whether your bonus is scheduled or paid.</p>
+      <p>See offer acceptance, hours worked, and payout schedule in real time.</p>
     </section>
 
     <section id="debugging" class="card">
       <h2>Application Debugging</h2>
-      <article class="qa" data-tags="chromedevtools interview id status">
-        <h3 id="d1">Find interview status</h3>
+      <article class="qa" id="d1">
+        <h3>Find interview status</h3>
         <p><strong>interviewId:</strong> <code>intr_2f692c18-6462-49ac-ad0f-0222f2f06052</code><br/>
            <strong>status:</strong> <code>videoRecordingUploaded</code></p>
-        <button class="copy" data-copy="#d1">Copy link</button>
       </article>
 
-      <article class="qa" data-tags="api resume experiences endpoint method patch">
-        <h3 id="d2">Resume update endpoint</h3>
+      <article class="qa" id="d2">
+        <h3>Resume update endpoint</h3>
         <pre><code>PATCH /api/resume/experiences/{experienceId}</code></pre>
-        <p><em>PATCH</em> is used for partial updates without replacing the entire record.</p>
-        <button class="copy" data-copy="#d2">Copy link</button>
+        <p>PATCH is correct for partial updates without replacing the entire record.</p>
       </article>
 
-      <article class="qa" data-tags="listing created time next data ist utc">
-        <h3 id="d3">Job listing created time</h3>
+      <article class="qa" id="d3">
+        <h3>Job listing created time</h3>
         <pre><code>"createdAt": "2025-08-06T00:16:53Z"</code></pre>
         <p>UTC: 06 Aug 2025, 00:16:53 · IST: 06 Aug 2025, 05:46:53 AM</p>
-        <button class="copy" data-copy="#d3">Copy link</button>
       </article>
     </section>
 
     <section id="sql" class="card">
       <h2>SQL Examples</h2>
-
       <h3 id="s1">Users who applied to Mercor listings</h3>
       <pre><code class="language-sql">SELECT DISTINCT
   u.UserId,
@@ -140,10 +127,8 @@ WHERE c.Name = 'Mercor';
 
   <footer class="site-footer">
     <div class="container">
-      <p>© <span id="year"></span> Mercor Docs (demo). Human-written answers by product & ops.</p>
+      <p>© 2025 Mercor - Shreya Pandey</p>
     </div>
   </footer>
-
-  <script src="app.js"></script>
 </body>
 </html>
