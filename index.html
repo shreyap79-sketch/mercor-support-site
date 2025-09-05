@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mercor — Support Answers & How-Tos</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header>
+  <h1>Mercor — Candidate Support Answers</h1>
+  <p class="sub">Roleplay responses + Application Debugging steps + SQL answers</p>
+</header>
+
+<main>
+  <section id="roleplay">
+    <h2>Roleplay Answers</h2>
+    <h3>Q1. I-983 signature</h3>
+    <p>Mercor doesn’t sign I-983 forms. Send it to your <strong>employer of record</strong> (the company that hired you). If unsure, check your <em>Contracts</em> tab or onboarding emails. For help: <code>support@mercor.com</code>.</p>
+
+    <h3>Q2. It’s Thursday; no Wednesday payment</h3>
+    <ul>
+      <li>Payouts process Wednesday for approved hours from the prior week.</li>
+      <li>Banks can take <strong>1–3 business days</strong>. If nothing by Friday EOD, verify payout details and contact support.</li>
+    </ul>
+
+    <h3>Q3. <code>/upload-resume</code> 404</h3>
+    <p>That URL is outdated. Upload your resume from the <strong>Applications</strong> tab after login. If issues persist, clear cache/try another browser or ask support for a fresh link.</p>
+
+    <h3>Q4. Referred 40 people; when do I get paid?</h3>
+    <ul>
+      <li>Rewards pay only after a referred candidate is <strong>hired</strong> and completes eligibility (e.g., minimum time worked).</li>
+      <li>Track status and payout in the <strong>Referrals</strong> dashboard.</li>
+    </ul>
+  </section>
+
+  <section id="debugging">
+    <h2>Application Debugging (Chrome DevTools)</h2>
+
+    <h3>Q1. Find <code>interviewId</code> &amp; <code>status</code></h3>
+    <ol>
+      <li>Open Interviews → <kbd>F12</kbd> → <strong>Network</strong> → filter <code>interview</code>.</li>
+      <li>Click “Talent Success Interview” → open request → <strong>Response</strong> → read <code>id</code>/<code>status</code>.</li>
+    </ol>
+
+    <h3>Q2. Resume → Work Experience: endpoint + method</h3>
+    <ol>
+      <li>Edit Work Experience → Save while Network is open.</li>
+      <li>Endpoint will include <code>experience</code>/<code>resume</code>. Using <strong>PATCH</strong> (partial update) is ideal; <strong>PUT</strong> is OK if replacing entire object; <strong>POST</strong> only for create/upsert.</li>
+    </ol>
+
+    <h3>Q3. When was the job listing created?</h3>
+    <ol>
+      <li>Network filter <code>listing</code> and read <code>createdAt</code> in the response, or search <code>__NEXT_DATA__</code>.</li>
+      <li>Convert in Console: <code>new Date("2025-09-04T12:34:56.789Z").toString()</code></li>
+    </ol>
+  </section>
+
+  <section id="sql">
+    <h2>SQL Queries</h2>
+
+    <h3>Q1. Users who applied to “Mercor” listings</h3>
+<pre><code>SELECT DISTINCT
+  u.UserId,
+  u.Email
+FROM Applications a
+JOIN Listings    l ON l.ListingUID = a.ListingVersionId
+JOIN Company     c ON c.CompanyId  = l.CompanyId
+JOIN MercorUsers u ON u.UserId     = a.UserId
+WHERE c.Name = 'Mercor';
+</code></pre>
+
+    <h3>Q2. Avg min/max rate (USD) for “Mercor” listings</h3>
+<pre><code>SELECT
+  AVG(l.RateMin) / 100.0 AS AvgMinRateUSD,
+  AVG(l.RateMax) / 100.0 AS AvgMaxRateUSD
+FROM Listings l
+JOIN Company  c ON c.CompanyId = l.CompanyId
+WHERE c.Name = 'Mercor';
+</code></pre>
+    <p class="note">Rates stored in cents → divide by 100.</p>
+  </section>
+</main>
+
+<footer>
+  <p>© Mercor — sample support microsite for practice</p>
+</footer>
+</body>
+</html>
